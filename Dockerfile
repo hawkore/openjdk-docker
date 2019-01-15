@@ -20,7 +20,12 @@ FROM debian:9.6
 MAINTAINER Hawkore
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-    && apt-get install -yq --no-install-recommends openjdk-8-jdk-headless \
+    && apt-get install -yq --no-install-recommends curl \
+	&& curl -k https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz | tar -xz -C /opt \
+    && ln -s /opt/jdk-11.0.1/bin/java /bin/java \
+	&& apt-get -yq purge curl \
     && apt-get -yq auto-remove \
-	&& apt-get clean \
+    && apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+

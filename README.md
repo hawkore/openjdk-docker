@@ -8,4 +8,4 @@ Versions so far:
 
 | Version | Other tags | From       |
 | ------- | ---------- | ---------- |
-| 8u181   | 8          | Debian:9.6 |
+| 11.0.1  | 11         | Debian:9.6 |
